@@ -1,5 +1,5 @@
 :root {
-  --color-green: hsl(75, 94%, 57%);
+  --color-accent: hsl(75, 94%, 57%);
   --color-white: hsl(0, 0%, 100%);
   --color-gray-dark:  hsl(0, 0%, 8%);
   --color-gray:  hsl(0, 0%, 12%);
@@ -35,8 +35,14 @@ body  {
   color: var(--color-white);
 }
 
+a, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
 section {
-  width: 325px;
+  min-width: 320px;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
@@ -63,7 +69,7 @@ section {
     }
 
     .header__location {
-      color: var(--color-green);
+      color: var(--color-accent);
     }
   }
 
@@ -83,6 +89,23 @@ section {
       text-align: center;
       padding: .75rem;
       border-radius: 8px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  section {
+    min-width: 375px;
+
+    ul[aria-label="Social links"] {
+      width: 300px;
+      
+
+      li:hover, li:has(a:focus) {
+        background-color: var(--color-accent);
+        color: var(--color-gray-dark);
+        cursor: pointer;
+      }
     }
   }
 }
