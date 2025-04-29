@@ -99,7 +99,6 @@ section {
 
     ul[aria-label="Social links"] {
       width: 300px;
-      
 
       li:hover, li:has(a:focus) {
         background-color: var(--color-accent);
